@@ -1,9 +1,6 @@
 package com.akash.springdemo.mvc;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Customer {
 
@@ -23,6 +20,18 @@ public class Customer {
 @Min(value = 1 ,message = "must be greater than this")
 @Max(value = 10,message = "must be less than this")
     private int FreePass;
+
+
+    public String getPostalCode() {
+        return PostalCode;
+    }
+
+    public void setPostalCode(String PostalCode) {
+        this.PostalCode = PostalCode;
+    }
+
+    @Pattern(regexp ="^[a-zA-Z0-9]{5}" ,message = "only 5 char/digits")
+    private String PostalCode;
 
     public String getFirstName() {
         return FirstName;
