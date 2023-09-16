@@ -10,16 +10,17 @@ public class Customer {
     private String LastName= "";
 
 
-    public int getFreePass() {
+    public Integer getFreePass() {
         return FreePass;
     }
 
-    public void setFreePass(int FreePass) {
+    public void setFreePass(Integer FreePass) {
         this.FreePass = FreePass;
     }
 @Min(value = 1 ,message = "must be greater than this")
 @Max(value = 10,message = "must be less than this")
-    private int FreePass;
+@NotNull(message = "required")
+    private Integer FreePass;
 
 
     public String getPostalCode() {
